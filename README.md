@@ -127,7 +127,7 @@ If your respones are wrapped by a container object you can extend config/swagger
 ```json
 {
   "response": {
-    "data" : "data",
+    "dataKey" : "data",
     "schema" : {
   		"type": "object",
   		"properties": {
