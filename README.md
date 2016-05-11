@@ -145,3 +145,4 @@ If your respones are wrapped by a container object you can extend config/swagger
 
 ## TODO
 * Support for v2
+* Support configuration for custom auth/user module (currently only works with default module)
