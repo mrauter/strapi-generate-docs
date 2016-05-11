@@ -19,5 +19,26 @@
       "name": "token",
       "in": "query"
     }
+  },
+  "definitions": {
+    "Auth": {
+      "type": "object",
+      "properties": {
+        "jwt": {
+          "type": "string"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    },
+    "RequestError": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    }
   }
 }
