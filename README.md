@@ -24,6 +24,9 @@ http://strapi.io/documentation/customization
 }
 ```
 
+## Important
+Currently only works as expected if auto population is off (config/general.json: blueprints.populate = false)
+
 ## Configuration
 Default configration will be generated in config/swagger.json
 
