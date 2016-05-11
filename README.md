@@ -129,14 +129,14 @@ If your respones are wrapped by a container object you can extend config/swagger
   "response": {
     "dataKey" : "data",
     "schema" : {
-  		"type": "object",
+  	  "type": "object",
   		"properties": {
-  			"status": {
+  		  "status": {
           "type": "integer"
         }
-  		}
-  	}
-	},
+  	  }
+    }
+  },
   "template": {
 
   }
