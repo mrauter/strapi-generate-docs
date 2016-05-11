@@ -107,10 +107,8 @@ Example for user module
 ```
 
 #### Addional parameters
-
-hide: Hide route in documentation (see above)
-
-populated: Model will be populated in the response, example:
+* hide: Hide route in documentation (see above)
+* populated: Model will be populated in the response, example:
 ```json
 {
   "attributes": {
@@ -124,3 +122,26 @@ populated: Model will be populated in the response, example:
   }
 }
 ```
+* Response container
+If your respones are wrapped by a container object you can extend config/swagger.json like:
+```json
+{
+  "response": {
+    "data" : "data",
+    "schema" : {
+  		"type": "object",
+  		"properties": {
+  			"status": {
+          "type": "integer"
+        }
+  		}
+  	}
+	},
+  "template": {
+
+  }
+}
+```
+
+## TODO
+* Support for v2
