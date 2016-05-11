@@ -41,8 +41,8 @@ Because a full auto-generation only works for standard CRUD resources you can ov
 }
 ```
 
-route = Key same as in routes.json
-config = swagger specification (will be merged via defaults)
+* route = Key same as in routes.json
+* config = swagger specification (will be merged via defaults)
 
 Example for upload module
 ```json
