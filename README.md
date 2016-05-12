@@ -6,9 +6,7 @@ Generate Swagger (OAI) API specificaiton
 $ strapi generate docs
 ```
 
-Generates specification file which can be validated with: http://editor.swagger.io/
-
-Viewer: http://swagger.io/swagger-ui/
+The specification file and the viewer will be automatically generated in /docs/
 
 ## Installation: Add custom generator
 http://strapi.io/documentation/customization
