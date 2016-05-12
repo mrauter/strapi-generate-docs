@@ -32,15 +32,26 @@
             "$ref": "#/definitions/User"
           }
         }
-      },
-      "RequestError": {
+      }
+    }
+  },
+  "responses": {
+    "default": {
+      "description": "Error",
+        "schema": {
         "type": "object",
         "properties": {
+          "code": {
+            "type": "integer"
+          },
           "message": {
             "type": "string"
           }
-        }
+        }        
       }
     }
-  }
+  },
+  "security": [{
+      "token": []
+  }]
 }

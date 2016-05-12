@@ -132,7 +132,7 @@ Example for user module
 If your respones are wrapped by a container object you can extend config/swagger.json like:
 ```json
 {
-  "response": {
+  "container": {
     "dataKey" : "data",
     "schema" : {
   	  "type": "object",
@@ -149,6 +149,31 @@ If your respones are wrapped by a container object you can extend config/swagger
 }
 ```
 
+* Default respones
+You can add general response types to all your calls (example error response)
+```json
+{
+  "responses": {
+    "default": {
+      "description": "Error",
+        "schema": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          }
+        }        
+      }
+    }
+  },
+  "template": {
+
+  }
+}
+```
+
 ## TODO
 * Support for v2
-* Support configuration for custom auth/user module (currently only works with default module)
