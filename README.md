@@ -31,34 +31,33 @@ Currently only works as expected if auto population is off (config/general.json:
 Default configration will be generated in config/swagger.json
 
 ### Customise model configuration
-Because a full auto-generation only works for standard CRUD resources you can override and extend the model/route configuration. Just create a swagger.json file in api/{model}/config
-
-```json
-{
-  "route": {
-    "config"
-  }
-}
-```
-
-* route = Key same as in routes.json
-* config = swagger specification (will be merged via defaults)
+Because a full auto-generation only works for standard CRUD resources you can override and extend the model/route configuration. Just extend routes config with "documentation"
 
 Example for upload module
 ```json
 {
-  "POST /upload": {
-    "summary": "Upload file",
-    "consumes": ["multipart/*"],
-    "parameters": [
-      {
-        "name": "file",
-        "in": "formData",
-        "description": "File to upload",
-        "required": true,
-        "type": "file"
+  "routes": {
+    "POST /upload": {
+      "controller": "Upload",
+      "action": "upload",
+      "policies": [
+        "addDataCreate",
+        "authenticated"
+      ],
+      "documentation": {
+        "summary": "Upload file",
+        "consumes": ["multipart/*"],
+        "parameters": [
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "File to upload",
+            "required": true,
+            "type": "file"
+          }
+        ]
       }
-    ]
+    }
   }
 }
 ```
@@ -66,44 +65,51 @@ Example for upload module
 Example for user module
 ```json
 {
-  "POST /auth/local": {
-    "summary": "Get auth token",
-    "parameters": [
-      {
-        "name": "identifier",
-        "in": "formData",
-        "required": true,
-        "type": "string"
-      },
-      {
-        "name": "password",
-        "in": "formData",
-        "required": true,
-        "type": "string"
+  "routes": {
+    "POST /auth/local": {
+      "controller": "Auth",
+      "action": "callback",
+      "documentation" : {
+        "summary": "Get auth token",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ]
       }
-    ],
-    "security": []
-  },
-  "POST /auth/logout": {
-    "summary": "Logout",
-    "parameters": [],
-    "hide": true
-  },
-  "POST /auth/forgot-password": {
-    "summary": "Forgot password",
-    "security": [],
-    "hide": true
-  },
-  "POST /auth/change-password": {
-    "summary": "Change password",
-    "hide": true
-  },
-  "POST /auth/refresh": {
-    "summary": "Refresh auth token",
-    "parameters": []
-  }
+    },
+    "POST /auth/logout": {
+      "controller": "Auth",
+      "action": "logout",
+      "documentation" : {
+        "hide": true
+      }
+    },
+    "POST /auth/forgot-password": {
+      "controller": "Auth",
+      "action": "forgotPassword",
+      "documentation" : {
+        "hide": true
+      }
+    },
+    "POST /auth/change-password": {
+      "controller": "Auth",
+      "action": "changePassword",
+      "documentation" : {
+        "hide": true
+      }
+    },
+    ...
 }
-...
 ```
 
 #### Addional parameters
