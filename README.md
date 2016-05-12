@@ -33,7 +33,7 @@ Default configuration will be generated in config/swagger.json
 ### Customize model configuration
 Because a full auto-generation only works for standard CRUD resources you can override and extend the model/route configuration. Just extend routes config with "documentation"
 
-Example for upload module
+Example for upload module:
 ```json
 {
   "routes": {
@@ -62,7 +62,7 @@ Example for upload module
 }
 ```
 
-Example for user module
+Example for user module:
 ```json
 {
   "routes": {
@@ -114,7 +114,7 @@ Example for user module
 
 #### Addional parameters
 * `hide`: hide route in documentation (see above)
-* populated: Model will be populated in the response, example:
+* `populated`: model will be populated in the response, example:
 ```json
 {
   "attributes": {
@@ -128,8 +128,7 @@ Example for user module
   }
 }
 ```
-* Response container
-If your respones are wrapped by a container object you can extend config/swagger.json like:
+* Response container: if your respones are wrapped by a container object you can extend config/swagger.json like:
 ```json
 {
   "container": {
@@ -149,8 +148,7 @@ If your respones are wrapped by a container object you can extend config/swagger
 }
 ```
 
-* Default respones
-You can add general response types to all your calls (example error response)
+* Default respones: you can add general response types to all your calls (example error response)
 ```json
 {
   "responses": {
