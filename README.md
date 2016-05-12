@@ -15,7 +15,7 @@ http://strapi.io/documentation/customization
 ```json
 {
   "generators": {
-    "blog": {
+    "docs": {
       "repository": "git@github.com:mrauter/strapi-generate-docs.git",
       "remote": "origin",
       "branch": "master"
@@ -28,9 +28,9 @@ http://strapi.io/documentation/customization
 Currently only works as expected if auto population is off (config/general.json: blueprints.populate = false)
 
 ## Configuration
-Default configration will be generated in config/swagger.json
+Default configuration will be generated in config/swagger.json
 
-### Customise model configuration
+### Customize model configuration
 Because a full auto-generation only works for standard CRUD resources you can override and extend the model/route configuration. Just extend routes config with "documentation"
 
 Example for upload module
@@ -113,7 +113,7 @@ Example for user module
 ```
 
 #### Addional parameters
-* hide: Hide route in documentation (see above)
+* `hide`: hide route in documentation (see above)
 * populated: Model will be populated in the response, example:
 ```json
 {
