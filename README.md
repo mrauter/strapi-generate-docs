@@ -15,7 +15,7 @@ http://strapi.io/documentation/customization
 ```json
 {
   "generators": {
-    "blog": {
+    "docs": {
       "repository": "git@github.com:mrauter/strapi-generate-docs.git",
       "remote": "origin",
       "branch": "master"
